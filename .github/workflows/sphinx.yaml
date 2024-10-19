@@ -3,7 +3,7 @@ name: Sphinx build
 on:
   push:
     branches:
-      - "main"
+      - 'main'
 
 jobs:
   build:
@@ -13,38 +13,20 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-
-      - name: Install docs dependencies
-        run: pip install -r requirements.txt
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Build documentation
-        run: |
-          sphinx-apidoc consumer --output-dir docs/source --force --separate --no-toc --implicit-namespaces && sphinx-build docs/source docs/build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "./docs/build"
-
-  deploy-documentation:
-    runs-on: [self-hosted, X64, Linux, minimal]
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - uses: actions/checkout@v2
+    - name: Build HTML
+      uses: ammaraskar/sphinx-action@0.4
+      with:
+        build-command: "sphinx-apidoc consumer --output-dir docs/source --force --separate --no-toc --implicit-namespaces && sphinx-build docs/source docs/build"
+        pre-build-command: "apt-get update -y && apt-get install -y pandoc"
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-docs
+        path: docs/build/html/
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/build/html
