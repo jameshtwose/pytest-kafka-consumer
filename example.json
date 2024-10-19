@@ -1,0 +1,41 @@
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "profile": {
+        "age": 30,
+        "gender": "male",
+        "preferences": {
+            "newsletter": true,
+            "notifications": {
+                "email": true,
+                "sms": false,
+                "push": true
+            }
+        },
+        "address": {
+            "street": "123 Main St",
+            "city": "Anytown",
+            "state": "CA",
+            "zip": "12345",
+            "country": "USA"
+        }
+    },
+    "history": {
+        "last_login": "2023-10-01T12:34:56Z",
+        "purchase_history": [
+            {
+                "item_id": 101,
+                "item_name": "Laptop",
+                "purchase_date": "2023-09-15T10:00:00Z",
+                "amount": 999.99
+            },
+            {
+                "item_id": 102,
+                "item_name": "Mouse",
+                "purchase_date": "2023-09-16T11:30:00Z",
+                "amount": 25.50
+            }
+        ]
+    }
+}

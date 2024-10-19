@@ -1,0 +1,27 @@
+id: {{ id }}
+name: {{ name }}
+email: {{ email }}
+profile:
+  age: {{ profile.age }}
+  gender: {{ profile.gender }}
+  preferences:
+    newsletter: {{ profile.preferences.newsletter }}
+    notifications:
+      email: {{ profile.preferences.notifications.email }}
+      sms: {{ profile.preferences.notifications.sms }}
+      push: {{ profile.preferences.notifications.push }}
+  address:
+    street: {{ profile.address.street }}
+    city: {{ profile.address.city }}
+    state: {{ profile.address.state }}
+    zip: {{ profile.address.zip }}
+    country: {{ profile.address.country }}
+history:
+  last_login: {{ history.last_login }}
+  purchase_history:
+    {% for purchase in history.purchase_history %}
+    - item_id: {{ purchase.item_id }}
+      item_name: {{ purchase.item_name }}
+      purchase_date: {{ purchase.purchase_date }}
+      amount: {{ purchase.amount }}
+    {% endfor %}

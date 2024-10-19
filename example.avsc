@@ -1,0 +1,140 @@
+{
+    "type": "record",
+    "name": "User",
+    "namespace": "com.example",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "profile",
+            "type": {
+                "type": "record",
+                "name": "Profile",
+                "fields": [
+                    {
+                        "name": "age",
+                        "type": "int"
+                    },
+                    {
+                        "name": "gender",
+                        "type": "string"
+                    },
+                    {
+                        "name": "preferences",
+                        "type": {
+                            "type": "record",
+                            "name": "Preferences",
+                            "fields": [
+                                {
+                                    "name": "newsletter",
+                                    "type": "boolean"
+                                },
+                                {
+                                    "name": "notifications",
+                                    "type": {
+                                        "type": "record",
+                                        "name": "Notifications",
+                                        "fields": [
+                                            {
+                                                "name": "email",
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "name": "sms",
+                                                "type": "boolean"
+                                            },
+                                            {
+                                                "name": "push",
+                                                "type": "boolean"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "address",
+                        "type": {
+                            "type": "record",
+                            "name": "Address",
+                            "fields": [
+                                {
+                                    "name": "street",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "city",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "state",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "zip",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "country",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "history",
+            "type": {
+                "type": "record",
+                "name": "History",
+                "fields": [
+                    {
+                        "name": "last_login",
+                        "type": "string"
+                    },
+                    {
+                        "name": "purchase_history",
+                        "type": {
+                            "type": "array",
+                            "items": {
+                                "type": "record",
+                                "name": "Purchase",
+                                "fields": [
+                                    {
+                                        "name": "item_id",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "name": "item_name",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "purchase_date",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "type": "double"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
