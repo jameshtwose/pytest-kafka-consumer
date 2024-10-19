@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    --maintext: grey;
+    --highlight: #385920;
+    --highlightgradient: #38592027;
+    --white: #ffffff;
+    --offwhite: #f8f8f8;
+    --textcolor: #7db43c;
+    --textcolorgradient: #7cb43ca9;
+}
+
+.navbar .brand {
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6, li, a, .navbar .nav>li>a {
+    font-weight: normal;
+}
+
+h1 {
+    color: var(--maintext);
+}
+
+h1 code {
+    color: var(--maintext);
+}
+
+h2 {
+    color: var(--maintext);
+}
+
+.navbar {
+    background-color: var(--textcolorgradient);
+    padding: 5px;
+}
+
+li {
+    color: var(--textcolor);
+}
+
+li.toctree-l1 a.reference.internal code {
+    color: var(--textcolor);
+}
+
+li .reference.internal {
+    color: var(--textcolor);
+}
+
+.nav.navbar-nav li a {
+    color: var(--maintext);
+}
+
+.nav.navbar-nav li a:hover {
+    color: var(--maintext);
+}
+
+#dLabelGlobalToc {
+    color: var(--maintext);
+}
+
+#dLabelLocalToc {
+    color: var(--maintext);
+}
+
+.genindex-jumpbox a {
+    color: var(--textcolor);
+}
+
+table td li a {
+    color: var(--textcolor);
+}
+
+.footer a {
+    color: var(--textcolor);
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: var(--textcolor);
+    text-decoration: none;
+    background-color: var(--highlight);
+}
+
+code {
+    color: var(--textcolor);
+}
+
+a {
+    color: var(--textcolor);
+}
+
+a.headerlink:hover {
+    color: var(--maintext);
+}
+
+.navbar-default .navbar-brand {
+    color: var(--maintext);
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: var(--maintext);
+    background-color: transparent;
+    }
+
+.navbar .brand:hover {
+    color: var(--highlight);
+}
+
+.navbar .nav li.dropdown>a:hover .caret, .navbar .nav li.dropdown>a:focus .caret {
+    border-top-color: var(--highlight);
+    border-bottom-color: var(--highlight);
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
+    background-image: linear-gradient(to bottom, var(--white), var(--offwhite));
+}
+
+a:hover, a:focus {
+    color: var(--textcolorgradient);
+    text-decoration: underline;
+}
