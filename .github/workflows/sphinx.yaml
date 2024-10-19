@@ -17,7 +17,7 @@ jobs:
     - name: Build HTML
       uses: ammaraskar/sphinx-action@0.4
       with:
-        build-command: "sphinx-apidoc consumer --output-dir docs/source --force --separate --no-toc --implicit-namespaces && sphinx-build docs/source docs/build"
+        # build-command: "sphinx-apidoc consumer --output-dir docs/source --force --separate --no-toc --implicit-namespaces && sphinx-build docs/source docs/build"
         pre-build-command: "apt-get update -y && apt-get install -y pandoc"
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
